@@ -3,294 +3,189 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Super Intelligence Defence Lab · Xavier Institute of Engineering</title>
-<meta name="description" content="Station Zero: a research and teaching lab at Xavier Institute of Engineering, Mumbai, working on keeping capable AI systems safe, secure and under human oversight.">
-<meta property="og:title" content="Super Intelligence Defence Lab">
-<meta property="og:description" content="Station Zero at Xavier Institute of Engineering, Mumbai.">
-<meta name="theme-color" content="#0D1F2D">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' rx='40' fill='%230D1F2D'/%3E%3Cellipse cx='100' cy='100' rx='44' ry='70' fill='none' stroke='%23C8A24B' stroke-width='24'/%3E%3Cline x1='70' y1='158' x2='130' y2='42' stroke='%23C8A24B' stroke-width='20'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<title>Super Intelligence Defence Lab — Website</title>
+<meta name="description" content="Super Intelligence Defence Lab (Station Zero) at Xavier Institute of Engineering, Mumbai: AI security research, teaching, lab services and OT security.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
 <style>
-:root{
-  --ink:#0D1F2D; --brass:#C8A24B; --paper:#F1EBDD; --sea:#2E6F6A;
-  --mist:#D9D2C2; --line:#34495A; --muted:#4A4A42; --error:#8A2E1E;
-  --display:'Josefin Sans','Futura','Century Gothic',sans-serif;
-  --mono:'IBM Plex Mono','Courier New',monospace;
-}
-*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:#0D1F2D}
 html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--display);-webkit-font-smoothing:antialiased}
-img,svg{max-width:100%}
-a{color:var(--brass)} a:hover{color:var(--paper)}
-:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
-.light :focus-visible{outline-color:var(--sea)}
-.skip{position:absolute;left:-9999px;top:0;background:var(--brass);color:var(--ink);padding:12px 16px;z-index:10}
-.skip:focus{left:16px;top:16px}
-.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
-.section{padding:96px 0}
-.light{background:var(--paper);color:var(--ink)}
-.sea{background:var(--sea);color:var(--paper)}
-.kicker{font-family:var(--mono);font-size:14px;letter-spacing:.3em;color:var(--brass);margin:0 0 16px}
-.light .kicker{color:var(--sea)} .sea .kicker{color:var(--paper)}
-h1,h2,h3{margin:0;font-weight:600}
-h2{font-size:clamp(2rem,4vw,2.8rem);line-height:1.1;letter-spacing:.04em}
-p{margin:0}
-.lede{font-weight:300;font-size:clamp(1.1rem,2vw,1.4rem);line-height:1.6}
-
-/* header */
-.site-header{border-bottom:1px solid var(--line)}
-.nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:20px;padding-bottom:20px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--paper)}
-.brand strong{font-weight:600;font-size:18px;letter-spacing:.12em}
-.brand span{font-family:var(--mono);font-size:13px;letter-spacing:.25em;color:var(--brass)}
-.nav ul{display:flex;flex-wrap:wrap;gap:8px 24px;list-style:none;margin:0;padding:0;font-family:var(--mono);font-size:15px;letter-spacing:.08em}
-.nav ul a{display:inline-block;padding:12px 0;text-decoration:none}
-
-/* hero */
-.hero{display:flex;flex-wrap:wrap;align-items:center;gap:64px}
-.hero-copy{flex:999 1 520px;min-width:0;display:flex;flex-direction:column;gap:28px}
-.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.02;letter-spacing:.05em}
-.hero .lede{color:var(--mist);max-width:620px}
-.hero-mark{flex:1 1 280px;display:flex;justify-content:center}
-.hero-mark svg{width:320px;height:auto}
-.actions{display:flex;flex-wrap:wrap;gap:16px}
-.btn{display:inline-flex;align-items:center;min-height:52px;padding:0 28px;font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:.08em;text-decoration:none;border:1px solid var(--brass);cursor:pointer}
-.btn-solid{background:var(--brass);color:var(--ink)} .btn-solid:hover{background:var(--paper);border-color:var(--paper);color:var(--ink)}
-.btn-ghost{background:transparent;color:var(--paper)} .btn-ghost:hover{background:var(--brass);color:var(--ink)}
-
-/* mission */
-.split{display:flex;flex-wrap:wrap;gap:64px}
-.split > :first-child{flex:1 1 320px}
-.split > :last-child{flex:999 1 480px;min-width:0;display:flex;flex-direction:column;gap:20px;font-weight:300;font-size:20px;line-height:1.6;max-width:68ch}
-
-/* grids */
-.section-head{margin-bottom:48px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
-.tile{border:1px solid var(--line);padding:32px;display:flex;flex-direction:column;gap:14px}
-.tile .num{font-family:var(--mono);font-size:13px;letter-spacing:.3em;color:var(--brass)}
-.tile h3{font-size:24px;letter-spacing:.06em}
-.tile p{font-weight:300;font-size:18px;line-height:1.5;color:var(--mist)}
-.tile svg{width:56px;height:56px}
-.tile.lead{border-color:var(--brass)}
-.avatar{width:88px;height:88px;border-radius:50%;background:var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;color:var(--mist);overflow:hidden}
-.avatar img{width:100%;height:100%;object-fit:cover}
-
-/* teaching */
-.facts{flex:1 1 280px !important;font-family:var(--mono) !important;font-size:16px !important;font-weight:400 !important;gap:12px !important}
-.facts div{border-top:1px solid var(--paper);padding-top:12px}
-
-/* join */
-.join{max-width:820px;display:flex;flex-direction:column;gap:28px}
-.join h2{font-weight:700;font-size:clamp(2.4rem,5vw,3.6rem);line-height:1;letter-spacing:.03em}
-.cipher{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:24px 0;font-family:var(--mono);font-weight:500;font-size:clamp(1.6rem,4.5vw,2.6rem);letter-spacing:.1em;overflow-wrap:anywhere}
-.hint{font-family:var(--mono);font-size:16px;color:var(--muted)}
-form label{display:block;font-weight:600;font-size:17px;letter-spacing:.06em;margin-bottom:8px}
-.row{display:flex;flex-wrap:wrap;gap:12px}
-.row input{flex:1 1 260px;min-height:52px;padding:0 16px;border:2px solid var(--ink);background:#fff;color:var(--ink);font-family:var(--mono);font-size:18px;letter-spacing:.08em}
-.row button{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.row button:hover{background:var(--sea);border-color:var(--sea);color:var(--paper)}
-.result-ok{background:var(--ink);color:var(--paper);padding:24px;display:flex;flex-direction:column;gap:8px}
-.result-ok strong{font-weight:600;font-size:22px;letter-spacing:.06em;color:var(--brass)}
-.result-ok p{font-weight:300;font-size:18px;line-height:1.5}
-.result-no{font-family:var(--mono);font-size:16px;color:var(--error)}
-[hidden]{display:none !important}
-
-/* footer */
-.site-footer{border-top:1px solid var(--line)}
-.site-footer .wrap{padding-top:40px;padding-bottom:40px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-family:var(--mono);font-size:14px;letter-spacing:.06em;color:var(--mist)}
+*{box-sizing:border-box}
+:focus-visible{outline:2px solid #C8A24B;outline-offset:3px}
+a{color:#C8A24B}a:hover{color:#F1EBDD}
 </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<div style="background: #0D1F2D; color: #F1EBDD; font-family: 'Josefin Sans', 'Futura', 'Century Gothic', sans-serif">
 
-<header class="site-header">
-  <nav class="wrap nav" aria-label="Main">
-    <a class="brand" href="#top">
-      <svg viewBox="0 0 200 200" width="40" height="40" aria-hidden="true"><circle cx="100" cy="100" r="92" fill="none" stroke="#C8A24B" stroke-width="8"/><ellipse cx="100" cy="100" rx="34" ry="56" fill="none" stroke="#C8A24B" stroke-width="14"/><line x1="76" y1="148" x2="124" y2="52" stroke="#C8A24B" stroke-width="11"/></svg>
-      <strong>SIDL</strong><span>STATION ZERO</span>
-    </a>
-    <ul>
-      <li><a href="#mission">Mission</a></li>
-      <li><a href="#huts">The Huts</a></li>
-      <li><a href="#teaching">Teaching</a></li>
-      <li><a href="#people">People</a></li>
-      <li><a href="#join">Join</a></li>
-    </ul>
-  </nav>
+<header style="border-bottom: 1px solid #34495A">
+<nav style="max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #F1EBDD">
+<svg viewBox="0 0 200 200" width="40" height="40" aria-hidden="true"><circle cx="100" cy="100" r="92" fill="none" stroke="#C8A24B" stroke-width="8"></circle><ellipse cx="100" cy="100" rx="34" ry="56" fill="none" stroke="#C8A24B" stroke-width="14"></ellipse><line x1="76" y1="148" x2="124" y2="52" stroke="#C8A24B" stroke-width="11"></line></svg>
+<span style="font-weight: 600; font-size: 18px; letter-spacing: 0.12em">SIDL</span>
+<span style="font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 13px; letter-spacing: 0.25em; color: #C8A24B">STATION ZERO</span>
+</a>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 15px; letter-spacing: 0.08em">
+<a href="#mission" style="text-decoration: none; padding: 12px 0">Mission</a>
+<a href="#huts" style="text-decoration: none; padding: 12px 0">The Huts</a>
+<a href="services.html" style="text-decoration: none; padding: 12px 0">Services</a>
+<a href="ot.html" style="text-decoration: none; padding: 12px 0">OT Security</a>
+<a href="#teaching" style="text-decoration: none; padding: 12px 0">Teaching</a>
+<a href="#people" style="text-decoration: none; padding: 12px 0">People</a>
+</div>
+</nav>
 </header>
 
-<main id="main">
-  <section id="top" class="section">
-    <div class="wrap hero">
-      <div class="hero-copy">
-        <p class="kicker" style="margin:0">XAVIER INSTITUTE OF ENGINEERING · MUMBAI</p>
-        <h1>SUPER INTELLIGENCE DEFENCE LAB</h1>
-        <p class="lede">A research and teaching lab working on how to keep increasingly capable AI systems safe, secure and under meaningful human oversight.</p>
-        <div class="actions">
-          <a class="btn btn-solid" href="#join">TAKE THE CIPHER CHALLENGE</a>
-          <a class="btn btn-ghost" href="#huts">EXPLORE THE HUTS</a>
-        </div>
-      </div>
-      <div class="hero-mark">
-        <svg viewBox="0 0 200 200" role="img" aria-label="Station Zero emblem: a slashed zero inside a cipher rotor ring">
-          <circle cx="100" cy="100" r="96" fill="none" stroke="#C8A24B" stroke-width="2"/>
-          <circle cx="100" cy="100" r="88" fill="none" stroke="#C8A24B" stroke-width="8" stroke-dasharray="1.6 19.666"/>
-          <circle cx="100" cy="100" r="80" fill="none" stroke="#C8A24B" stroke-width="1.5"/>
-          <path d="M100 2 L105 8 L100 14 L95 8 Z" fill="#0D1F2D" stroke="#C8A24B" stroke-width="2"/>
-          <ellipse cx="100" cy="100" rx="28" ry="46" fill="none" stroke="#C8A24B" stroke-width="7"/>
-          <line x1="80" y1="140" x2="120" y2="60" stroke="#C8A24B" stroke-width="5"/>
-          <g stroke="#C8A24B" stroke-width="3"><line x1="36" y1="88" x2="62" y2="88"/><line x1="30" y1="100" x2="62" y2="100"/><line x1="36" y1="112" x2="62" y2="112"/><line x1="138" y1="88" x2="164" y2="88"/><line x1="138" y1="100" x2="170" y2="100"/><line x1="138" y1="112" x2="164" y2="112"/></g>
-        </svg>
-      </div>
-    </div>
-  </section>
+<section id="top" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 64px">
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<div style="font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 15px; letter-spacing: 0.3em; color: #C8A24B">XAVIER INSTITUTE OF ENGINEERING · MUMBAI</div>
+<h1 style="margin: 0; font-weight: 600; font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: 1.02; letter-spacing: 0.05em">SUPER INTELLIGENCE DEFENCE LAB</h1>
+<p style="margin: 0; font-weight: 300; font-size: 22px; line-height: 1.5; color: #D9D2C2; max-width: 620px">A research and teaching lab working on how to keep increasingly capable AI systems safe, secure and under meaningful human oversight.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<a href="services.html" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; background: #C8A24B; color: #0D1F2D; text-decoration: none; font-weight: 600; font-size: 17px; letter-spacing: 0.08em">VIEW LAB SERVICES</a>
+<a href="#huts" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border: 1px solid #C8A24B; color: #F1EBDD; text-decoration: none; font-weight: 600; font-size: 17px; letter-spacing: 0.08em">EXPLORE THE HUTS</a>
+</div>
+</div>
+<div style="flex: 1 1 280px; display: flex; justify-content: center">
+<svg viewBox="0 0 200 200" width="320" height="320" style="max-width: 100%; height: auto" role="img" aria-label="Station Zero emblem">
+<circle cx="100" cy="100" r="96" fill="none" stroke="#C8A24B" stroke-width="2"></circle>
+<circle cx="100" cy="100" r="88" fill="none" stroke="#C8A24B" stroke-width="8" stroke-dasharray="1.6 19.666"></circle>
+<circle cx="100" cy="100" r="80" fill="none" stroke="#C8A24B" stroke-width="1.5"></circle>
+<path d="M100 2 L105 8 L100 14 L95 8 Z" fill="#0D1F2D" stroke="#C8A24B" stroke-width="2"></path>
+<ellipse cx="100" cy="100" rx="28" ry="46" fill="none" stroke="#C8A24B" stroke-width="7"></ellipse>
+<line x1="80" y1="140" x2="120" y2="60" stroke="#C8A24B" stroke-width="5"></line>
+<g stroke="#C8A24B" stroke-width="3"><line x1="36" y1="88" x2="62" y2="88"></line><line x1="30" y1="100" x2="62" y2="100"></line><line x1="36" y1="112" x2="62" y2="112"></line><line x1="138" y1="88" x2="164" y2="88"></line><line x1="138" y1="100" x2="170" y2="100"></line><line x1="138" y1="112" x2="164" y2="112"></line></g>
+</svg>
+</div>
+</section>
 
-  <section id="mission" class="section light">
-    <div class="wrap split">
-      <div>
-        <p class="kicker">WHY STATION ZERO</p>
-        <h2>A small team of careful minds, facing a hard problem.</h2>
-      </div>
-      <div>
-        <p>In the 1940s, a quiet group of mathematicians and engineers at Bletchley Park’s Station X took on an adversary more capable than any single person. Among them was Alan Turing, whose work went on to found computer science and artificial intelligence.</p>
-        <p>Station Zero carries that spirit to Mumbai. Zero is India’s gift to mathematics, and the slashed zero is the engineer’s mark. We study how to understand, test and secure AI systems before they outpace our ability to oversee them.</p>
-      </div>
-    </div>
-  </section>
+<section id="mission" style="background: #F1EBDD; color: #0D1F2D">
+<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 64px">
+<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 16px">
+<div style="font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 14px; letter-spacing: 0.3em; color: #2E6F6A">WHY STATION ZERO</div>
+<h2 style="margin: 0; font-weight: 600; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; letter-spacing: 0.04em">A small team of careful minds, facing a hard problem.</h2>
+</div>
+<div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 20px; font-weight: 300; font-size: 20px; line-height: 1.6">
+<p style="margin: 0">In the 1940s, a quiet group of mathematicians and engineers at Bletchley Park’s Station X took on an adversary more capable than any single person. Among them was Alan Turing, whose work went on to found computer science and artificial intelligence.</p>
+<p style="margin: 0">Station Zero carries that spirit to Mumbai. Zero is India’s gift to mathematics, and the slashed zero is the engineer’s mark. We study how to understand, test and secure AI systems before they outpace our ability to oversee them.</p>
+</div>
+</div>
+</section>
 
-  <section id="huts" class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="kicker">THE HUTS</p>
-        <h2>Six workstreams, one mission</h2>
-      </div>
-      <div class="grid">
-        <article class="tile">
-          <svg viewBox="0 0 48 48" fill="none" stroke="#C8A24B" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="19"/><circle cx="24" cy="24" r="15" stroke-dasharray="1 4.9"/><path d="M24 9 L29 24 L24 39 L19 24 Z"/><circle cx="24" cy="24" r="2" fill="#C8A24B"/></svg>
-          <span class="num">HUT 1</span><h3>ALIGNMENT</h3>
-          <p>Keeping AI goals and values on course as systems grow more capable.</p>
-        </article>
-        <article class="tile">
-          <svg viewBox="0 0 48 48" fill="none" stroke="#C8A24B" stroke-width="2" aria-hidden="true"><circle cx="24" cy="24" r="14"/><line x1="24" y1="3" x2="24" y2="15"/><line x1="24" y1="33" x2="24" y2="45"/><line x1="3" y1="24" x2="15" y2="24"/><line x1="33" y1="24" x2="45" y2="24"/><circle cx="24" cy="24" r="2" fill="#C8A24B"/></svg>
-          <span class="num">HUT 2</span><h3>RED TEAM</h3>
-          <p>Attacking our own systems first: jailbreaks, prompt injection and adversarial testing.</p>
-        </article>
-        <article class="tile">
-          <svg viewBox="0 0 48 48" fill="none" stroke="#C8A24B" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M3 24 C11 11, 37 11, 45 24 C37 37, 11 37, 3 24 Z"/><circle cx="24" cy="24" r="8"/><rect x="21" y="21" width="6" height="6" fill="#C8A24B"/></svg>
-          <span class="num">HUT 3</span><h3>INTERPRETABILITY</h3>
-          <p>Seeing inside the black box to understand why models do what they do.</p>
-        </article>
-        <article class="tile">
-          <svg viewBox="0 0 48 48" fill="none" stroke="#C8A24B" stroke-width="2" stroke-linecap="square" aria-hidden="true"><circle cx="14" cy="24" r="9"/><circle cx="14" cy="24" r="3"/><line x1="23" y1="24" x2="45" y2="24"/><line x1="39" y1="24" x2="39" y2="32"/><line x1="32" y1="24" x2="32" y2="30"/></svg>
-          <span class="num">HUT 4</span><h3>CRYPTOGRAPHY</h3>
-          <p>Securing model weights, training data and the infrastructure around them.</p>
-        </article>
-        <article class="tile">
-          <svg viewBox="0 0 48 48" fill="none" stroke="#C8A24B" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M5 17 L24 6 L43 17 Z"/><line x1="12" y1="21" x2="12" y2="36"/><line x1="24" y1="21" x2="24" y2="36"/><line x1="36" y1="21" x2="36" y2="36"/><line x1="7" y1="39" x2="41" y2="39"/><line x1="4" y1="43" x2="44" y2="43"/></svg>
-          <span class="num">HUT 5</span><h3>GOVERNANCE</h3>
-          <p>Policy, standards and oversight, with a view from India and the Global South.</p>
-        </article>
-        <article class="tile">
-          <svg viewBox="0 0 48 48" fill="none" stroke="#C8A24B" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M24 3 L41 9 V23 C41 33 34 40 24 45 C14 40 7 33 7 23 V9 Z"/><rect x="17" y="17" width="14" height="14"/><line x1="17" y1="24" x2="31" y2="24"/></svg>
-          <span class="num">HUT 6</span><h3>CONTAINMENT</h3>
-          <p>Sandboxing, monitoring and safe deployment of autonomous agents.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+<section id="huts" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div style="font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 14px; letter-spacing: 0.3em; color: #C8A24B">THE HUTS</div>
+<h2 style="margin: 0; font-weight: 600; font-size: clamp(2rem, 4vw, 2.8rem); letter-spacing: 0.04em">Six workstreams, one mission</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px">
+<div style="border: 1px solid #34495A; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+<svg viewBox="0 0 48 48" width="56" height="56" fill="none" stroke="#C8A24B" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="19"></circle><circle cx="24" cy="24" r="15" stroke-dasharray="1 4.9"></circle><path d="M24 9 L29 24 L24 39 L19 24 Z"></path><circle cx="24" cy="24" r="2" fill="#C8A24B"></circle></svg>
+<div style="font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 13px; letter-spacing: 0.3em; color: #C8A24B">HUT 1</div>
+<h3 style="margin: 0; font-weight: 600; font-size: 24px; letter-spacing: 0.06em">ALIGNMENT</h3>
+<p style="margin: 0; font-weight: 300; font-size: 18px; line-height: 1.5; color: #D9D2C2">Keeping AI goals and values on course as systems grow more capable.</p>
+</div>
+<div style="border: 1px solid #34495A; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+<svg viewBox="0 0 48 48" width="56" height="56" fill="none" stroke="#C8A24B" stroke-width="2" aria-hidden="true"><circle cx="24" cy="24" r="14"></circle><line x1="24" y1="3" x2="24" y2="15"></line><line x1="24" y1="33" x2="24" y2="45"></line><line x1="3" y1="24" x2="15" y2="24"></line><line x1="33" y1="24" x2="45" y2="24"></line><circle cx="24" cy="24" r="2" fill="#C8A24B"></circle></svg>
+<div style="font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 13px; letter-spacing: 0.3em; color: #C8A24B">HUT 2</div>
+<h3 style="margin: 0; font-weight: 600; font-size: 24px; letter-spacing: 0.06em">RED TEAM</h3>
+<p style="margin: 0; font-weight: 300; font-size: 18px; line-height: 1.5; color: #D9D2C2">Attacking our own systems first: jailbreaks, prompt injection and adversarial testing.</p>
+</div>
+<div style="border: 1px solid #34495A; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+<svg viewBox="0 0 48 48" width="56" height="56" fill="none" stroke="#C8A24B" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M3 24 C11 11, 37 11, 45 24 C37 37, 11 37, 3 24 Z"></path><circle cx="24" cy="24" r="8"></circle><rect x="21" y="21" width="6" height="6" fill="#C8A24B"></rect></svg>
+<div style="font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 13px; letter-spacing: 0.3em; color: #C8A24B">HUT 3</div>
+<h3 style="margin: 0; font-weight: 600; font-size: 24px; letter-spacing: 0.06em">INTERPRETABILITY</h3>
+<p style="margin: 0; font-weight: 300; font-size: 18px; line-height: 1.5; color: #D9D2C2">Seeing inside the black box to understand why models do what they do.</p>
+</div>
+<div style="border: 1px solid #34495A; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+<svg viewBox="0 0 48 48" width="56" height="56" fill="none" stroke="#C8A24B" stroke-width="2" stroke-linecap="square" aria-hidden="true"><circle cx="14" cy="24" r="9"></circle><circle cx="14" cy="24" r="3"></circle><line x1="23" y1="24" x2="45" y2="24"></line><line x1="39" y1="24" x2="39" y2="32"></line><line x1="32" y1="24" x2="32" y2="30"></line></svg>
+<div style="font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 13px; letter-spacing: 0.3em; color: #C8A24B">HUT 4</div>
+<h3 style="margin: 0; font-weight: 600; font-size: 24px; letter-spacing: 0.06em">CRYPTOGRAPHY</h3>
+<p style="margin: 0; font-weight: 300; font-size: 18px; line-height: 1.5; color: #D9D2C2">Securing model weights, training data and the infrastructure around them.</p>
+</div>
+<div style="border: 1px solid #34495A; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+<svg viewBox="0 0 48 48" width="56" height="56" fill="none" stroke="#C8A24B" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M5 17 L24 6 L43 17 Z"></path><line x1="12" y1="21" x2="12" y2="36"></line><line x1="24" y1="21" x2="24" y2="36"></line><line x1="36" y1="21" x2="36" y2="36"></line><line x1="7" y1="39" x2="41" y2="39"></line><line x1="4" y1="43" x2="44" y2="43"></line></svg>
+<div style="font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 13px; letter-spacing: 0.3em; color: #C8A24B">HUT 5</div>
+<h3 style="margin: 0; font-weight: 600; font-size: 24px; letter-spacing: 0.06em">GOVERNANCE</h3>
+<p style="margin: 0; font-weight: 300; font-size: 18px; line-height: 1.5; color: #D9D2C2">Policy, standards and oversight, with a view from India and the Global South.</p>
+</div>
+<div style="border: 1px solid #34495A; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+<svg viewBox="0 0 48 48" width="56" height="56" fill="none" stroke="#C8A24B" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M24 3 L41 9 V23 C41 33 34 40 24 45 C14 40 7 33 7 23 V9 Z"></path><rect x="17" y="17" width="14" height="14"></rect><line x1="17" y1="24" x2="31" y2="24"></line></svg>
+<div style="font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 13px; letter-spacing: 0.3em; color: #C8A24B">HUT 6</div>
+<h3 style="margin: 0; font-weight: 600; font-size: 24px; letter-spacing: 0.06em">CONTAINMENT</h3>
+<p style="margin: 0; font-weight: 300; font-size: 18px; line-height: 1.5; color: #D9D2C2">Sandboxing, monitoring and safe deployment of autonomous agents.</p>
+</div>
+</div>
+</section>
 
-  <section id="teaching" class="section sea">
-    <div class="wrap split" style="align-items:center">
-      <div style="flex:999 1 480px;min-width:0;display:flex;flex-direction:column;gap:16px">
-        <p class="kicker" style="margin:0">TEACHING</p>
-        <h2>AI Cybersecurity for final-year engineers</h2>
-        <p class="lede">A hands-on course where students attack, defend and audit real AI systems, and learn the security thinking that the next decade of engineering will demand.</p>
-      </div>
-      <div class="facts">
-        <div>Semester · [SEMESTER]</div>
-        <div>Eligibility · [YEAR / BRANCH]</div>
-        <div>Format · Lectures + lab sessions</div>
-      </div>
-    </div>
-  </section>
+<section id="services" style="background: #F1EBDD; color: #0D1F2D">
+<div style="max-width: 1200px; margin: 0 auto; padding: 80px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 40px">
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 14px; letter-spacing: 0.3em; color: #2E6F6A">LAB SERVICES</div>
+<h2 style="margin: 0; font-weight: 600; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; letter-spacing: 0.04em">Securing AI in financial services</h2>
+<p style="margin: 0; font-weight: 300; font-size: 20px; line-height: 1.6; max-width: 720px">AI red teaming, Indic adversarial testing, a sealed air-gapped test range and regulatory assurance for banks, brokers, insurers and the AI vendors that serve them.</p>
+</div>
+<a href="services.html" style="flex: 0 0 auto; display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; background: #0D1F2D; color: #F1EBDD; text-decoration: none; font-weight: 600; font-size: 17px; letter-spacing: 0.08em">VIEW LAB SERVICES</a>
+</div>
+</section>
 
-  <section id="people" class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="kicker">PEOPLE</p>
-        <h2>Who works at Station Zero</h2>
-      </div>
-      <div class="grid">
-        <article class="tile lead">
-          <div class="avatar"><img src="data:image/jpeg;base64,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" alt="Prashanth Irudayaraj" width="88" height="88"></div>
-          <h3>Prashanth Irudayaraj</h3>
-          <span class="num" style="letter-spacing:.1em">FOUNDER · DIRECTOR</span>
-          <p>Technology executive across AI, digital-asset security and autonomous systems: production ML at Tesla, threshold MPC custody at ZebPay, R&amp;D at Keep Network and research at Georgia Tech Research Institute. CISM; MS Engineering and MBA, Georgia Tech.</p>
-        </article>
-        <article class="tile">
-          <div class="avatar">[PHOTO]</div>
-          <h3>[FACULTY NAME]</h3>
-          <span class="num" style="letter-spacing:.1em">FACULTY MEMBER</span>
-          <p>[Short bio and research interests]</p>
-        </article>
-        <article class="tile">
-          <div class="avatar">[PHOTO]</div>
-          <h3>Student researchers</h3>
-          <span class="num" style="letter-spacing:.1em">FIRST COHORT · [YEAR]</span>
-          <p>The lab’s first Hut members will be listed here once the cohort is selected.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+<section id="ot" style="max-width: 1200px; margin: 0 auto; padding: 80px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 40px">
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 14px; letter-spacing: 0.3em; color: #C8A24B">OT SECURITY</div>
+<h2 style="margin: 0; font-weight: 600; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; letter-spacing: 0.04em">Securing the grid’s control systems</h2>
+<p style="margin: 0; font-weight: 300; font-size: 20px; line-height: 1.6; color: #D9D2C2; max-width: 720px">Controller-level testing, firmware analysis and readiness for India’s binding power-sector cyber rules, for OEMs, generators and the investors behind them.</p>
+</div>
+<a href="ot.html" style="flex: 0 0 auto; display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border: 1px solid #C8A24B; color: #F1EBDD; text-decoration: none; font-weight: 600; font-size: 17px; letter-spacing: 0.08em">VIEW OT SECURITY</a>
+</section>
 
-  <section id="join" class="section light">
-    <div class="wrap join">
-      <p class="kicker" style="margin:0">JOIN THE LAB</p>
-      <h2>CAN YOU BREAK IT?</h2>
-      <div class="cipher" aria-label="Cipher text">WBVA FGNGVBA MREB</div>
-      <p class="hint">Hint: every letter has taken thirteen steps.</p>
-      <form id="cipher-form" novalidate>
-        <label for="cipher-answer">Your decoded message</label>
-        <div class="row">
-          <input id="cipher-answer" type="text" autocomplete="off" spellcheck="false">
-          <button class="btn" type="submit">CHECK</button>
-        </div>
-      </form>
-      <div id="result-ok" class="result-ok" role="status" hidden>
-        <strong>Message received.</strong>
-        <p>Write to <a href="mailto:[EMAIL]">[EMAIL]</a> with the subject “Station Zero”, your branch and year, and which Hut interests you most.</p>
-      </div>
-      <p id="result-no" class="result-no" role="status" hidden>Not quite. Shift each letter back by thirteen and try again.</p>
-    </div>
-  </section>
-</main>
+<section id="teaching" style="background: #2E6F6A">
+<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+<div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 14px; letter-spacing: 0.3em; color: #F1EBDD">TEACHING</div>
+<h2 style="margin: 0; font-weight: 600; font-size: clamp(2rem, 4vw, 2.8rem); letter-spacing: 0.04em">AI Cybersecurity for final-year engineers</h2>
+<p style="margin: 0; font-weight: 300; font-size: 20px; line-height: 1.6">A hands-on course where students attack, defend and audit real AI systems, and learn the security thinking that the next decade of engineering will demand.</p>
+</div>
+<div style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 12px; font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 16px">
+<div style="border-top: 1px solid #F1EBDD; padding-top: 12px">Semester · [SEMESTER]</div>
+<div style="border-top: 1px solid #F1EBDD; padding-top: 12px">Eligibility · [YEAR / BRANCH]</div>
+<div style="border-top: 1px solid #F1EBDD; padding-top: 12px">Format · Lectures + lab sessions</div>
+</div>
+</div>
+</section>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <span>Super Intelligence Defence Lab · Xavier Institute of Engineering, Mahim, Mumbai</span>
-    <span>[EMAIL] · © 2026</span>
-  </div>
+<section id="people" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div style="font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 14px; letter-spacing: 0.3em; color: #C8A24B">PEOPLE</div>
+<h2 style="margin: 0; font-weight: 600; font-size: clamp(2rem, 4vw, 2.8rem); letter-spacing: 0.04em">Who works at Station Zero</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px">
+<div style="border: 1px solid #C8A24B; padding: 32px; display: flex; flex-direction: column; gap: 12px">
+<div style="width: 88px; height: 88px; border-radius: 50%; background: #34495A; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 13px; color: #D9D2C2; overflow: hidden"><img src="assets/prashanth.jpg" alt="Prashanth Irudayaraj" style="width: 100%; height: 100%; object-fit: cover"></div>
+<h3 style="margin: 0; font-weight: 600; font-size: 24px; letter-spacing: 0.04em">Prashanth Irudayaraj</h3>
+<div style="font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 14px; letter-spacing: 0.1em; color: #C8A24B">FOUNDER · DIRECTOR</div>
+<p style="margin: 0; font-weight: 300; font-size: 17px; line-height: 1.55; color: #D9D2C2">Technology executive across AI, digital-asset security and autonomous systems: production ML at Tesla, threshold MPC custody at ZebPay, R&amp;D at Keep Network and research at Georgia Tech Research Institute. CISM; MS Engineering and MBA, Georgia Tech.</p>
+</div>
+<div style="border: 1px solid #34495A; padding: 32px; display: flex; flex-direction: column; gap: 12px">
+<div style="width: 88px; height: 88px; border-radius: 50%; background: #34495A; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 13px; color: #D9D2C2">[PHOTO]</div>
+<h3 style="margin: 0; font-weight: 600; font-size: 24px; letter-spacing: 0.04em">[FACULTY NAME]</h3>
+<div style="font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 14px; letter-spacing: 0.1em; color: #C8A24B">FACULTY MEMBER</div>
+<p style="margin: 0; font-weight: 300; font-size: 17px; line-height: 1.55; color: #D9D2C2">[Short bio and research interests]</p>
+</div>
+<div style="border: 1px solid #34495A; padding: 32px; display: flex; flex-direction: column; gap: 12px">
+<div style="width: 88px; height: 88px; border-radius: 50%; background: #34495A; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 13px; color: #D9D2C2">[PHOTO]</div>
+<h3 style="margin: 0; font-weight: 600; font-size: 24px; letter-spacing: 0.04em">Student researchers</h3>
+<div style="font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 14px; letter-spacing: 0.1em; color: #C8A24B">FIRST COHORT · [YEAR]</div>
+<p style="margin: 0; font-weight: 300; font-size: 17px; line-height: 1.55; color: #D9D2C2">The lab’s first Hut members will be listed here once the cohort is selected.</p>
+</div>
+</div>
+</section>
+
+<footer style="border-top: 1px solid #34495A">
+<div style="max-width: 1200px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 14px; letter-spacing: 0.06em; color: #D9D2C2">
+<span>Super Intelligence Defence Lab · Xavier Institute of Engineering, Mahim, Mumbai</span>
+<span>[EMAIL] · © 2026</span>
+</div>
 </footer>
 
-<script>
-(function () {
-  var form = document.getElementById('cipher-form');
-  var input = document.getElementById('cipher-answer');
-  var ok = document.getElementById('result-ok');
-  var no = document.getElementById('result-no');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var guess = input.value.toUpperCase().replace(/[^A-Z]/g, '');
-    if (!guess) { ok.hidden = true; no.hidden = true; return; }
-    var solved = guess === 'JOINSTATIONZERO';
-    ok.hidden = !solved;
-    no.hidden = solved;
-  });
-  input.addEventListener('input', function () { ok.hidden = true; no.hidden = true; });
-})();
-</script>
+</div>
 </body>
 </html>
